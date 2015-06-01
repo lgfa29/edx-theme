@@ -1,0 +1,17 @@
+header.global {
+    border-bottom: 4px solid $gray-l3;
+
+    .nav-global {
+        li, div {
+            font-size: em(18);
+
+            a {
+                color: $green;
+
+                &:hover, &:focus, &:active {
+                    color: $orange;
+                }
+            }
+        }
+    }
+}

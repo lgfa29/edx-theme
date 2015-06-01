@@ -1,0 +1,28 @@
+$header-height: 460px;
+$carousel-height: 285px;
+
+.home {
+  > header {
+    background-image: url('../themes/bdu/images/background-header.jpg');
+    background-attachment: fixed;
+
+    .outer-wrapper {
+      padding-top: ($header-height - $carousel-height)/2
+    }
+
+    .title {
+      background-color: rgba($bdu-main-bg, 0.6);
+      width: auto;
+      -webkit-transition: none;
+      -moz-transition: none;
+      transition: none;
+
+      > hgroup {
+        padding: 20px;
+        -webkit-transition: none;
+        -moz-transition: none;
+        transition: none;
+      }
+    }
+  }
+}

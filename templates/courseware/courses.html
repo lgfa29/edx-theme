@@ -1,0 +1,47 @@
+<%!
+  from django.utils.translation import ugettext as _
+  from microsite_configuration import microsite
+%>
+<%inherit file="../main.html" />
+
+<%namespace name='static' file='../static_content.html'/>
+
+<%block name="pagetitle">${_("Courses")}</%block>
+
+<%block name="js_extra">
+    <script src="${static.url('themes/bdu/js/vendor/sly.min.js')}"></script>
+    <script src="${static.url('themes/bdu/js/courseware/carousel.js')}"></script>
+</%block>
+
+<%block name="headextra">
+    <link rel="stylesheet" href="${static.url('themes/bdu/css/courseware/carousel.css')}" />
+</%block>
+
+<%
+    platform_name = microsite.get_value('platform_name', settings.PLATFORM_NAME)
+    course_index_overlay_text = _("Explore {platform_name}.").format(platform_name=platform_name)
+%>
+
+<section class="find-courses">
+
+  <header class="search">
+    <div class="inner-wrapper main-search">
+      <hgroup>
+        <%include file="../_carousel.html" />
+      </hgroup>
+    </div>
+  </header>
+
+  <section class="container">
+    <section class="courses">
+      <ul class="courses-listing">
+	%for course in courses:
+        <li class="courses-listing-item">
+          <%include file="../course.html" args="course=course" />
+        </li>
+        %endfor
+      </ul>
+    </section>
+  </section>
+
+</section>

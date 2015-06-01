@@ -1,0 +1,63 @@
+// COLORS
+$bdu-main-bg: rgb(244, 245, 233);
+$bdu-secondary-bg: rgb(229, 231, 206);
+
+$red: rgb(211, 51, 63); // #b20610;
+
+$orange: rgb(250, 167, 50);
+$orange-l1: tint($orange,20%);
+$orange-l2: tint($orange,40%);
+$orange-l3: tint($orange,60%);
+$orange-l4: tint($orange,80%);
+$orange-l5: tint($orange,90%);
+$orange-d1: shade($orange,10%);
+$orange-d2: shade($orange,30%);
+$orange-d3: shade($orange,50%);
+$orange-d4: shade($orange,70%);
+$orange-s1: saturate($orange,15%);
+$orange-s2: saturate($orange,30%);
+$orange-s3: saturate($orange,45%);
+$orange-u1: desaturate($orange,15%);
+$orange-u2: desaturate($orange,30%);
+$orange-u3: desaturate($orange,45%);
+
+$green: rgb(123, 158, 25);
+
+$body-bg: $bdu-main-bg;
+$container-bg: $bdu-main-bg;
+$header-bg: $gray-l5;
+$footer-bg: $header-bg;
+
+// ====================
+
+// ACTIONS: general
+$button-bg-image: transparent;
+$button-bg-color: $orange;
+$button-bg-hover-color: $orange-l1;
+
+// ACTIONS: primary
+$action-primary-bg: $orange;
+$action-primary-fg: $white;
+$action-primary-shadow: $orange-d2;
+
+// ACTIONS: primary - focused - hover/active pseudo states
+$action-primary-focused-bg: $orange-d1;
+$action-primary-focused-fg: $white;
+
+// MISC: links and buttons
+$link-color: $green;
+$link-color-d1: $green-d2;
+$link-hover: $orange;
+$button-color: $orange;
+
+// MISC: shadow, form, modal
+$shadow-color: $green;
+
+// MISC: sidebar
+$sidebar-chapter-bg-top: rgba(244, 245, 233, .6);
+$sidebar-chapter-bg-bottom: rgba(244, 245, 233, 0);
+
+// MISC: course assets
+$content-wrapper-bg: $bdu-main-bg;
+$course-profile-bg: $bdu-main-bg;
+

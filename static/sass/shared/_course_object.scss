@@ -1,0 +1,37 @@
+.highlighted-courses, .find-courses {
+    .courses {
+        .course {
+            .status {
+                background: $orange;
+            }
+
+            .meta-info {
+                background: rgba($orange, 0.9);
+                border-color: rgba($orange, 0.5);
+            }
+
+            header.course-preview {
+                @include background-image(linear-gradient(90deg, $gray-l5, $transparent));
+                background-color: $white;
+
+                &:hover, &:focus {
+                    @include background-image(linear-gradient(90deg, $gray-l5, $transparent));
+
+                    h2 {
+                        color: $orange;
+                    }
+                }
+
+                hgroup {
+                    h2 {
+                        color: $green;
+                    }
+                }
+            }
+
+            .info {
+                background: $gray-l6;
+            }
+        }
+    }
+}
