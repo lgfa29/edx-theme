@@ -1,36 +1,44 @@
-.login, .register, .passwordreset {
+.login, .register, .passwordreset, #forgot-password-modal #password-reset {
+    a {
+        &:link, &:visited, &:hover, &:active, &:focus {
+            color: $green;
+        }
+    }
+
     aside {
         width: 280px - 2px;
     }
+
+    form {
+        .field {
+            &.is-focused {
+                label, .tip {
+                    color: $orange;
+                }
+            }
+        }
+    }
 }
 
-// login
-.view-login {
-  .introduction {
-    header {
-        border-left: 1px solid $border-color-2;
-        border-right: 1px solid $border-color-2;
+.view-register, .view-login, .view-passwordreset {
+    .introduction {
+        header {
+            border-left: 1px solid $border-color-2;
+            border-right: 1px solid $border-color-2;
+     
+            .title {
+                .title-super {
+                    color: $green;
+                }
+            }
+        }
     }
-  }
-}
-
-
-// register
-.view-register {
-  .introduction {
-    header {
-        border-left: 1px solid $border-color-2;
-        border-right: 1px solid $border-color-2;
-    }
-  }
 }
 
 // password reset
 .view-passwordreset {
   .introduction {
     header {
-        border-left: 1px solid $border-color-2;
-        border-right: 1px solid $border-color-2;
         border-bottom: none;
     }
   }

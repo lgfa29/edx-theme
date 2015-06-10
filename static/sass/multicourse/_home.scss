@@ -3,13 +3,13 @@
 .home {
   > header {
     background-image: url('../themes/bdu/images/background-header-2.jpg');
-    background-position: bottom;
-    background-attachment: fixed;
+    background-position: top;
     background-color: #000;
     height: $header-height;
 
     .outer-wrapper {
       padding-top: 160px;
+      @include animation(none);
 
       h1 {
           color:$gray-l5;
