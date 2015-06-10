@@ -1,0 +1,22 @@
+@import 'neat/neat';
+
+.about-us {
+    @include outer-container;
+    padding-top: 40px;
+
+    > section {
+        @include span-columns(4);
+
+        h2, p {
+            font-family: "Open Sans", Sans-Serif;
+        }
+
+        h2 {
+            color: $green;
+        }
+
+        p {
+            font-size: 0.9em;
+        }
+    }
+}

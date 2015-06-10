@@ -23,10 +23,8 @@ $orange-u3: desaturate($orange,45%);
 
 $green: rgb(123, 158, 25);
 
-$body-bg: $bdu-main-bg;
-$container-bg: $bdu-main-bg;
-$header-bg: $gray-l5;
-$footer-bg: $header-bg;
+$body-bg: $gray-l5;
+$footer-bg: $gray-d3;
 
 // ====================
 
@@ -58,6 +56,12 @@ $sidebar-chapter-bg-top: rgba(244, 245, 233, .6);
 $sidebar-chapter-bg-bottom: rgba(244, 245, 233, 0);
 
 // MISC: course assets
-$content-wrapper-bg: $bdu-main-bg;
+$content-wrapper-bg: $body-bg;
 $course-profile-bg: $bdu-main-bg;
+
+// DIMENSIONS
+$menu-height: 76px;
+$header-height: 610px;
+$carousel-width: 690px;
+$carousel-height: 285px;
 

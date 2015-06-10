@@ -1,0 +1,38 @@
+.login, .register, .passwordreset {
+    aside {
+        width: 280px - 2px;
+    }
+}
+
+// login
+.view-login {
+  .introduction {
+    header {
+        border-left: 1px solid $border-color-2;
+        border-right: 1px solid $border-color-2;
+    }
+  }
+}
+
+
+// register
+.view-register {
+  .introduction {
+    header {
+        border-left: 1px solid $border-color-2;
+        border-right: 1px solid $border-color-2;
+    }
+  }
+}
+
+// password reset
+.view-passwordreset {
+  .introduction {
+    header {
+        border-left: 1px solid $border-color-2;
+        border-right: 1px solid $border-color-2;
+        border-bottom: none;
+    }
+  }
+}
+

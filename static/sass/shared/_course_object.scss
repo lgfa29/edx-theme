@@ -17,6 +17,10 @@
                 &:hover, &:focus {
                     @include background-image(linear-gradient(90deg, $gray-l5, $transparent));
 
+                    .info-link {
+                        color: $base-font-color;
+                    }
+
                     h2 {
                         color: $orange;
                     }

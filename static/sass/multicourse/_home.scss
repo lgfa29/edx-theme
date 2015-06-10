@@ -1,18 +1,27 @@
-$header-height: 460px;
-$carousel-height: 285px;
+@import '../base/base';
 
 .home {
   > header {
-    background-image: url('../themes/bdu/images/background-header.jpg');
+    background-image: url('../themes/bdu/images/background-header-2.jpg');
+    background-position: bottom;
     background-attachment: fixed;
+    background-color: #000;
+    height: $header-height;
 
     .outer-wrapper {
-      padding-top: ($header-height - $carousel-height)/2
+      padding-top: 160px;
+
+      h1 {
+          color:$gray-l5;
+          font-weight: 300;
+      }
     }
 
     .title {
       background-color: rgba($bdu-main-bg, 0.6);
-      width: auto;
+      width: $carousel-width + 2 * 20px;
+      margin: 0 auto;
+      float: none;
       -webkit-transition: none;
       -moz-transition: none;
       transition: none;

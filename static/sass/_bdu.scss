@@ -1,9 +1,14 @@
-@import 'variables';
-@import 'carousel';
+@import 'shame';
 
+@import 'base/base';
+@import 'base/variables';
+
+@import 'multicourse/account';
 @import 'multicourse/home';
+@import 'multicourse/about_us';
 @import 'multicourse/courses';
 
 @import 'shared/header';
 @import 'shared/footer';
 @import 'shared/course_object';
+@import 'shared/carousel';

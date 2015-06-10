@@ -1,17 +1,59 @@
 header.global {
-    border-bottom: 4px solid $gray-l3;
+    background-color: $shadow;
+    border-bottom: none;
+    position: absolute;
+    top: 0px;
+    
+    h1.logo {
+        margin-left: 30px;
+    }
 
+    .primary {
+        > a {
+            background-color: $white;
+
+            &:hover, &:focus, &:active {
+                background: $white;
+            }
+        }
+    }
+    
     .nav-global {
         li, div {
             font-size: em(18);
 
             a {
-                color: $green;
+                color: $white;
 
                 &:hover, &:focus, &:active {
-                    color: $orange;
+                    color: $white;
+                    text-decoration: underline;
                 }
             }
         }
     }
+
+    .nav-courseware {
+        li, div {
+            .cta {
+                box-shadow: none;
+                background: none;
+                color: $white;
+                text-transform: uppercase;
+                font-size: em(18);
+            }
+        }
+    }
 }
+
+// page-based nav states
+.view-howitworks .nav-global-01,
+.view-courses .nav-global-02,
+.view-schools .nav-global-03,
+.view-register .nav-global-04 {
+  a {
+    text-decoration: none;
+    color: $orange-d2 !important;
+  }
+}
+
