@@ -1,0 +1,46 @@
+<%! from django.utils.translation import ugettext as _ %>
+<%inherit file="../main.html" />
+
+<%block name="pagetitle">FAQ</%block>
+<%block name="bodyclass">static</%block>
+
+<section class="container faq">
+    <h1>Ajuda <small>Perguntas Frequentes</small></h1>
+
+    <ol>
+        <li>
+            <h3 id="cursos-gratuitos">Todos os cursos no Big Data University são gratuitos?</h3>
+            <p>Sim, atualmente, todos os cursos no Big Data University são gratuitos.</p>
+        </li>
+
+        <li>
+            <h3 id="inscricao">Quem pode fazer um curso no Big Data University? Como eu me inscrevo?</h3>
+            <p>
+                Qualquer um pode fazer um curso no Big Data University. Tudo o que você precisa é de acesso a um computador
+                com um navegador atual e conexão de internet. Para se inscrever, crie uma conta no Big Data University e selecione
+                o curso que deseja fazer. Clique em "Registrar Agora" para começar.
+            </p> 
+        </li>
+        
+        <li>
+            <h3 id="navegadores">Quais navegadores e versões o Big Data University suporta?</h3>
+            <p>Como o Big Data University usa o sistema de gerenciamento de cursos Open edX, os navegadores que suportamos são os mesmos do Open edX,
+            ou seja, versões atuais de: Chrome, Firefox ou Safari. Internet Explorer versão 9 ou superior também é suportado.</p>
+        </li>
+
+        <li>
+            <h3 id="email-confirmacao">Eu me inscrevi no Big Data University, mas não recebi meu e-mail de confirmação. O que devo fazer? </h3>
+            <p>Confira sua pasta de lixo eletrônico/spam primeiro. Se estiver lá, certifique-se de marcar como “não é spam” para que você possa receber
+            e-mails de nós no futuro. Após acessar o e-mail, clique no link que ele fornece para confirmar seu registro conosco. Se você não receber nenhum
+            e-mail, por favor nos contate pelo endereço admin@bigdatauniversity.com, e iremos confirmar manualmente  sua conta para você.</p>
+        </li>
+
+        <li>
+           <h3 id="certificado">Eu passei em um curso no Big Data University, mas não consigo imprimir meu certificado de conclusão. 
+    O que devo fazer? </h3>
+            <p>Big Data University (versão em Português) está em fase BETA no momento, e os certificados de conclusão atualmente não estão sendo
+            gerados automaticamente pelo sistema. Porém, o sistema monitora quem passou em cursos. Assim que essa função estiver 
+            totalmente implementada e testada, os certificados poderão ser impressos. Mandaremos um e-mail ou colocaremos um anúncio na nossa página quando essa função estiver pronta.</p>
+        </li>
+    </ol>
+</section>

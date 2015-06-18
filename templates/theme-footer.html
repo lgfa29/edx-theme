@@ -1,26 +1,55 @@
 ## mako
 <%! from django.core.urlresolvers import reverse %>
-<%namespace name='static' file='/static_content.html'/>
-<%! from datetime import datetime %>
-<%! from pytz import UTC %>
+<%! from django.utils.translation import ugettext as _ %>
+<%namespace name='static' file='static_content.html'/>
+<%! from microsite_configuration.templatetags.microsite import platform_name %>
 
-<div class="wrapper-footer">
+<div class="wrapper wrapper-footer">
   <footer>
     <div class="colophon">
       <nav class="nav-colophon">
-        <ol>
-          <li><a href="${reverse('tos')}">Terms of Service</a></li>
-          <li><a href="${reverse('tos')}#privacy">Privacy Policy</a></li>
-          <li><a href="${reverse('tos')}#honor">Honor Code</a></li>
-          <li><a href="${reverse('tos')}#copyright">Copyright</a></li>
-          <li><a href="${reverse('about')}#careers">Careers</a></li>
-          <li><a href="${reverse('about')}#contact">Contact</a></li>
-          <li><a href="${marketing_link('FAQ')}">Help</a></li>
-        </ol>
+      <ol>
+         <li class="nav-colophon-01">
+          <a id="about" href="${marketing_link('ABOUT')}">Sobre</a>
+         </li>
+         <li class="nav-colophon-04">
+          <a id="faq" href="${marketing_link('FAQ')}">Ajuda</a>
+         </li>
+         <li class="nav-colophon-05">
+          <a id="contact" href="${marketing_link('CONTACT')}">Contato</a>
+         </li>
+         <li class="nav-colophon-06">
+          <a href="${marketing_link('LEGAL')}">Legal</a>
+         </li>
+      </ol>
       </nav>
-    </div>
-    <div class="references">
-      <span>Built on <a href="http://code.edx.org">OpenEdX</a>.</span>
+
+      <p class="copyright">&copy; ${settings.COPYRIGHT_YEAR} ${settings.PLATFORM_NAME}.</p>
+
+      ## Site operators: Please do not remove this paragraph! This attributes back to edX and makes your acknowledgement of edX's trademarks clear.
+      <p class="copyright">
+    ## Translators: 'EdX', 'edX', and 'Open edX' are trademarks of 'edX Inc.'. Please do not translate any of these trademarks and company names.
+    ${_("EdX, Open edX, and the edX and Open edX logos are registered trademarks or trademarks of {link_start}edX Inc.{link_end}").format(
+        link_start=u"<a href='https://www.edx.org/'>",
+        link_end=u"</a>"
+    )}
+      </p>
+   </div>
+
+    ## please leave this link and use one of the logos provided
+    <div class="powered-by">
+      <p>
+        <a href="http://openedx.org/">
+          ## standard powered-by logo
+      ## Translators: 'Open edX' is a brand, please keep this untranslated. See http://openedx.org for more information.
+          ##<img src="https://files.edx.org/openedx-logos/edx-openedx-logo-tag.png" alt="${_('Powered by Open edX')}" width="150" height="50" />
+          ## greyscale logo for dark background
+          <img src="https://files.edx.org/openedx-logos/edx-openedx-logo-tag-light.png" alt="${_('Powered by Open edX')}" width="150" height="50" />
+          ## greyscale logo for light background
+          ## <img src="https://files.edx.org/openedx-logos/edx-openedx-logo-tag-dark.png" alt="${_('Powered by Open edX')}" width="150" height="50" />
+        </a>
+      </p>
     </div>
   </footer>
 </div>
+

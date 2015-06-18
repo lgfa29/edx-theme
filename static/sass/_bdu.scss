@@ -5,10 +5,18 @@
 
 @import 'multicourse/account';
 @import 'multicourse/home';
-@import 'multicourse/about_us';
 @import 'multicourse/courses';
+@import 'multicourse/course_about';
+@import 'multicourse/dashboard';
 
 @import 'shared/header';
 @import 'shared/footer';
 @import 'shared/course_object';
 @import 'shared/carousel';
+@import 'shared/forms';
+@import 'shared/modal';
+@import 'shared/hero';
+
+@import 'static_pages/about_us';
+@import 'static_pages/faq';
+@import 'static_pages/static';

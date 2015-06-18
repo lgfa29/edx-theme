@@ -22,7 +22,7 @@
                     }
 
                     h2 {
-                        color: $orange;
+                        color: $green;
                     }
                 }
 
@@ -35,6 +35,14 @@
 
             .info {
                 background: $gray-l6;
+
+                .desc {
+                    p {
+                        font-family: "Open Sans", Sans-Serif;
+                        font-size: 0.9em;
+                        font-weight: 300;
+                    }
+                }
             }
         }
     }

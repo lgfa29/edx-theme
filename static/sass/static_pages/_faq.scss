@@ -1,0 +1,21 @@
+.static {
+    .faq {
+        ol {
+            li {
+                color: $green;
+                margin-bottom: 20px;
+
+                h3 {
+                    color: $green;
+                    font-family: "Open Sans", Sans-Serif;
+                    font-size: 1em;
+                    margin-bottom: 5px;
+                }
+
+                p {
+                    font-weight: 300;
+                }
+            }
+        }
+    }
+}

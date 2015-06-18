@@ -2,6 +2,8 @@ $carousel-width: 690px;
 $carousel-height: 276px;
 
 .carousel-wrap {
+    position: relative;
+
     .frame {
         width: $carousel-width;
         height: $carousel-height;

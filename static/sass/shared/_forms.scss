@@ -1,0 +1,6 @@
+input[type="submit"],
+input[type="button"],
+button,.button {
+    @include button(simple, $button-color);
+    color: $white;
+}

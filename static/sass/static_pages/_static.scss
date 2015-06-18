@@ -1,0 +1,28 @@
+.static {
+    .content-wrapper {
+        background: none;
+
+        .container {
+            padding: 30px;
+
+            h1 { 
+                color: $green;
+                text-align: left;
+                font-weight: 300;
+
+                small {
+                    color: $gray;
+                    font-size: 0.6em;
+                    display: block;
+                    margin-left: 30px;
+                }
+            }
+
+            p {
+                font-family: "Open Sans", Sans-Serif;
+                font-weight: 300;
+            }
+        }
+    }
+}
+

@@ -5,17 +5,17 @@
 
 ## TODO: this will eventually be moved to the Sass
 <%block name="navigation_logo">
-  <img src="${static.url('themes/bdu/images/bdu-logo.png')}" height="50" alt="Home Page" />
+    <img src="${static.url('themes/bdu/images/bdu-logo-light.png')}" alt="Home Page" />
 </%block>
 
 <%block name="navigation_global_links">
   <li class="nav-global-01">
-    <a href="#">LINK 1</a>
+    <a href="${marketing_link('CURRICULUM_MAP')}">Mapa Curricular</a>
   </li>
   <li class="nav-global-01">
-    <a href="#">LINK 2</a>
+    <a href="${marketing_link('BADGES')}">Badges</a>
   </li>
   <li class="nav-global-01">
-    <a href="#">LINK 3</a>
+    <a href="${marketing_link('RESOURCES')}">Recursos</a>
   </li>
 </%block>

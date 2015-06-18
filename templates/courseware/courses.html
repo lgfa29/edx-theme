@@ -7,6 +7,7 @@
 <%namespace name='static' file='../static_content.html'/>
 
 <%block name="pagetitle">${_("Courses")}</%block>
+<%block name="bodyclass">home</%block>
 
 <%block name="js_extra">
     <script src="${static.url('themes/bdu/js/vendor/sly.min.js')}"></script>
@@ -23,14 +24,7 @@
 %>
 
 <section class="find-courses">
-
-  <header class="search">
-    <div class="inner-wrapper main-search">
-      <hgroup>
-        <%include file="../_carousel.html" />
-      </hgroup>
-    </div>
-  </header>
+  <%include file="../hero.html" />
 
   <section class="container">
     <section class="courses">
