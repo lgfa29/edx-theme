@@ -1,36 +1,56 @@
+@import 'neat/neat';
 @import '../base/base';
 
 header.hero {
-  background-image: url('../themes/bdu/images/background-header.jpg');
-  background-position: top;
-  background-color: #000;
-  height: $header-height;
+    background-image: url('../themes/bdu/images/background-header.jpg');
+    background-position: center;
+    background-size: cover;
+    background-color: #000;
+    height: 540px;
+    margin-top: 0px;
 
-  .outer-wrapper {
-    padding-top: 160px;
-    @include animation(none);
+    .outer-wrapper {
+        margin: 0 49px;
+        padding: 130px 30px 0;
+        @include animation(none);
 
-    h1 {
-      color:$gray-l5;
-      font-weight: 300;
-      text-shadow: $shadow 1px 1px, $shadow 2px 2px;
+        aside {
+            @include span-columns(4);
+
+            h1, h2 {
+                font-family: "Open Sans", Sans-Serif;
+                font-weight: normal;
+                text-shadow: 1px 1px $shadow, 2px 2px $shadow;
+                text-align: left;
+            }
+
+            h1 {
+                color: $green;
+                font-size: 2.5em;
+                line-height: 1.15em;
+                margin-bottom: 20px;
+                text-shadow: 1px 1px $shadow, 2px 2px $shadow;
+            }
+
+            h2 {
+                color: $white;
+                font-size: 1.5em;
+                font-style: italic;
+                text-transform: none;
+                line-height: 1.3em;
+
+                span {
+                    color: $white;
+                    font-weight: 900;
+                    font-style: italic;
+                    line-height: 1.3em;
+                }
+            }
+        }
+
+        .carousel-wrapper {
+            @include span-columns(8);
+            display: none;
+        }
     }
-
-    .title {
-      background-color: rgba($bdu-main-bg, 0.6);
-      width: $carousel-width + 2 * 20px;
-      margin: 0 auto;
-      float: none;
-      -webkit-transition: none;
-      -moz-transition: none;
-      transition: none;
-
-      > hgroup {
-        padding: 20px;
-        -webkit-transition: none;
-        -moz-transition: none;
-        transition: none;
-      }
-    }
-  }
 }

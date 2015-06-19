@@ -1,21 +1,33 @@
 ## mako
 <%! from django.core.urlresolvers import reverse %>
 <%namespace name='static' file='/static_content.html'/>
+<%namespace name="courseware" file="/courseware/courseware.html"/>
 <%inherit file="/navigation.html"/>
 
 ## TODO: this will eventually be moved to the Sass
-<%block name="navigation_logo">
-    <img src="${static.url('themes/bdu/images/bdu-logo-light.png')}" alt="Home Page" />
+<%block name="navigation_logo" >
+<%
+    ## TODO: fix
+    try:
+        course = courseware.context.course_id
+    except:
+        course = None
+
+    logo_file = "dark" if course else "light"
+    logo_url = "themes/bdu/images/bdu-logo-%s.png" % logo_file
+%>
+
+    <img src="${static.url(logo_url)}" alt="Home Page" />
 </%block>
 
 <%block name="navigation_global_links">
   <li class="nav-global-01">
-    <a href="${marketing_link('CURRICULUM_MAP')}">Mapa Curricular</a>
+    <a href="https://bigdatauniversity.com/curriculum-map/">Mapa de Cursos</a>
   </li>
   <li class="nav-global-01">
-    <a href="${marketing_link('BADGES')}">Badges</a>
+    <a href="https://bigdatauniversity.com/bdu-badge/">Badges</a>
   </li>
   <li class="nav-global-01">
-    <a href="${marketing_link('RESOURCES')}">Recursos</a>
+    <a href="https://bigdatauniversity.com/resources/">Recursos</a>
   </li>
 </%block>

@@ -1,7 +1,64 @@
+.corner-ribbon {
+    width: 150px;
+    background: $orange;
+    position: absolute;
+    top: 12.5px;
+    left: -50px;
+    text-align: center;
+    line-height: 25px;
+    color: $white;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    font-weight: 900;
+    z-index: 999;
+    
+    &.sticky { 
+        position: fixed;
+    } 
+
+    &.shadow {
+        box-shadow: 0 0 3px $shadow;
+        text-shadow: 2px 2px $shadow;
+    }
+
+    &.top-right {
+        top: 12.5px;
+        right: -50px;
+        left: auto;
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+    }
+}
+
 header.global {
     background-color: $gray-d3;
     border-bottom: 4px solid #A9A9A9;
     height: auto;
+
+    &.slim {
+        background-color: $gray-d3 !important;
+
+        nav {
+            padding: 0;
+        }
+
+        h1.logo {
+            margin-right: 15px !important;
+
+            img {
+                height: 20px !important;
+            }
+        }
+
+        h2 {
+            color: $white !important;
+            text-shadow: none !important;
+
+            span {
+                color: $white;
+            }
+        }
+    }
 
     nav {
         padding: 10px 0;
@@ -29,10 +86,10 @@ header.global {
 
             a {
                 color: $white;
+                font-weight: normal;
 
                 &:hover, &:focus, &:active {
-                    color: $white;
-                    text-decoration: underline;
+                    color: $green;
                 }
             }
         }
@@ -46,6 +103,7 @@ header.global {
                 color: $white;
                 text-transform: uppercase;
                 font-size: em(18);
+                font-weight: 600;
             }
         }
     }

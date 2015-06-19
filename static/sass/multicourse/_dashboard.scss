@@ -7,6 +7,19 @@
                 }
             }
         }
+
+        .empty-dashboard-message {
+            a {
+                color: $white;
+                border: none;
+                padding: 10px 20px;
+
+                &:hover, &:focus {
+                    color: $white;
+                    background-color: $orange-d1;
+                }
+            }
+        }
     }
 }
 

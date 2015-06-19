@@ -7,7 +7,7 @@
 <%! from microsite_configuration import microsite %>
 
 <%block name="headextra">
-    <link rel="stylesheet" href="${static.url('themes/bdu/css/courseware/carousel.css')}" />
+    <link rel="stylesheet" href="${static.url('themes/bdu/css/slick/slick.css')}" />
 </%block>
 
 <%block name="bodyclass">home</%block>
@@ -62,8 +62,9 @@
          }
       })
    </script>
-   <script src="${static.url('themes/bdu/js/vendor/sly.min.js')}"></script>
-   <script src="${static.url('themes/bdu/js/courseware/carousel.js')}"></script>
+   <script src="${static.url('themes/bdu/js/vendor/slick.min.js')}"></script>
+   <script src="${static.url('themes/bdu/js/carousel.js')}"></script>
+   <script src="${static.url('themes/bdu/js/counter.js')}"></script>
 </%block>
 
 % if show_signup_immediately is not UNDEFINED:
