@@ -15,7 +15,6 @@ $(document).ready(function(){
         var counterUrl = "https://bigdatauniversity.com/web/admin/counter.json.php";
         $.get(counterUrl, function(data) {
             if (data.ok) {
-                console.log(data);
                 callback(data.registered_users)
             }
         });
