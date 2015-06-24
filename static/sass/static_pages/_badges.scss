@@ -1,0 +1,119 @@
+$menu-width: 280px;
+
+.badges {
+    aside {
+        position: fixed;
+        width: $menu-width;
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-top: 0;
+
+            li {
+                border-left: 1px solid $gray-l2;
+                border-right: 1px solid $gray-l2;
+                border-bottom: 1px solid $gray-l2;
+
+                &:first-child {
+                    border-top: 1px solid $gray-l2;
+                    border-radius: 5px 5px 0 0;
+                }
+
+                &:last-child {
+                    border-radius: 0 0 5px 5px;
+                }
+
+                a {
+                    display: block;
+                    padding: 10px;
+                    line-height: 1.3em;
+                    color: $gray-d3;
+
+                    &:hover, &:focus {
+                        text-decoration: none;
+                        color: $green;
+                    }
+                }
+            }
+        }
+    }
+
+    > section {
+        margin-left: $menu-width + 30px;
+
+        > section {
+            &:after {
+                content: '-~-';
+                color: $gray-l5;
+                display: block;
+                font-family: cursive;
+                font-size: 70px;
+                text-align: center;
+                text-shadow: 2px 2px $gray-l4;
+                margin-top: 50px;
+                margin-bottom: 40px;
+            }
+
+            &:last-child:after {
+                content: '';
+            }
+
+            header {
+                img {
+                    float: left;
+                    margin-right: 20px;
+                    margin-bottom: 20px;
+                    max-height: 120px;
+                }
+
+                h1 {
+                    color: $gray-d3 !important;
+                    font-size: 2.5em;
+                    font-weight: 900 !important;
+                    line-height: 1em;
+                }
+
+                h2 {
+                    color: $gray-l1;
+                    font-family: "Open Sans", Sans-Serif;
+                    font-size: 1.7em;
+                    font-weight: 600;
+                    margin: 0;
+                }
+            }
+
+            section {
+                margin-bottom: 20px;
+
+                h3 {
+                    color: $gray-d3;
+                    font-family: "Open Sans", Sans-Serif;
+                    font-weight: 600;
+                    margin-bottom: 5px;
+                }
+
+                p {
+                    a {
+                        font-family: "Open Sans", Sans-Serif;
+                        font-weight: 300;
+                    }
+                }
+
+                ul {
+                    padding-left: 60px;
+
+                    li {
+                        font-weight: 300; 
+                        margin-bottom: 10px;
+
+                        a {
+                            font-weight: 300; 
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+

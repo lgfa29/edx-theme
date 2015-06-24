@@ -1,5 +1,312 @@
-<section class="badges">
+<%! from django.utils.translation import ugettext as _ %>
+<%namespace name='static' file='../static_content.html'/>
+<%inherit file="../main.html" />
+
+<%block name="pagetitle">Legal</%block>
+<%block name="bodyclass">static</%block>
+
+<%!
+    def break_name(name):
+        return name.replace('-', '<br>')
+%>
+
+<%
+badges = [
+    {
+        "name": "Big Data - Fundamentos de Spark",
+        "id": "spark-fundamentals",
+        "company": "IBM",
+        "represent": """
+            <p>
+                Este badge é emitido e reconhecido pela IBM e atesta que as seguintes habilidades foram obtidas pelo titular:
+            </p>
+            <ul>
+                <li>Um entendimento básico de Apache Spark</li>
+                <li>Conhencimento em operações de <i>Relisient Distributed Datasetsi</i></li>
+                <li>Habilidade básica em usar Scala, Java ou Python para criar e rodar aplicações Spark</li>
+                <li>Conhecimento básico em Spark SQL, MLlib, Spark Streaming e GraphX</li>
+                <li>Conhecimento de como configurar, monitorar e otimizar o Spark</li>
+            </ul>
+        """,
+        "earn": """
+            <p>
+            Este badge é obtido depois de completar com sucesso todas as atividades do curso e passar no teste da Big Data University do curso de <a href='/courses/BDUPT/BD095PT/2015/about'>Fundamentos de Spark</a>
+            </p>
+        """,
+        "next": """
+            <p>
+                Os portadores deste badge podem perseguir os seguintes outros badges, idealmente (mas não obrigatoriamente) na seguinte ordem:
+            </p>
+            <ul>
+                <li><a href="#fundamentals">IBM Explorer - Big Data - Fundamentos</a></li>
+                <li><a href="#hadoop-fundamentals">IBM Explorer - Big Data - Fundamentos de Hadoop</a></li>
+                <li><a href="#programming">IBM Explorer - Big Data - Programação</a></li>
+                <li><a href="#administration">IBM Explorer - Big Data - Administração</a></li>
+                <li><a href="#analytics">IBM Explorer - Big Data - Análise</a></li>
+                <li><a href="#storage-and-retrieval">IBM Explorer - Big Data - Armazenamento e Aquisição</a></li>
+            </ul>
+        """
+    },
+    {
+        "name": "Big Data - Fundamentos",
+        "id": "fundamentals",
+        "company": "IBM",
+        "represent": """
+            <p>
+                Este badge é emitido e reconhecido pela IBM e atesta que as seguintes habilidades foram obtidas pelo titular:
+            </p>
+            <ul>
+                <li>Um entendimento do que é Big Data</li>
+                <li>Conhemento sobre os diferentes tipos de Big Data</li>
+                <li>A conscientização sobre problemas comuns de Big Data e casos de uso que afetam a maioria das indústrias</li>
+                <li>Conhecimentos básicos de uma plataforma de Big Data que inclui componentes para lidar com diferentes tipos de dados, e que inclui a governança de dados</li>
+            </ul>
+        """,
+        "earn": """
+            <p>
+            Este badge é obtido depois de completar com sucesso todas as atividades do curso e passar no teste da Big Data University do curso de <a href='/courses/BDUPT/BD000PT/2015/about'>Fundamentos de Big Data</a>
+            </p>
+        """,
+        "next": """
+            <p>
+                Os portadores deste badge podem perseguir os seguintes outros badges, idealmente (mas não obrigatoriamente) na seguinte ordem:
+            </p>
+            <ul>
+                <li><a href="#hadoop-fundamentals">IBM Explorer - Big Data - Fundamentos de Hadoop</a></li>
+                <li><a href="#spark-fundamentals">IBM Explorer - Big Data - Fundamentos de Spark</a></li>
+                <li><a href="#programming">IBM Explorer - Big Data - Programação</a></li>
+                <li><a href="#administration">IBM Explorer - Big Data - Administração</a></li>
+                <li><a href="#analytics">IBM Explorer - Big Data - Análise</a></li>
+                <li><a href="#storage-and-retrieval">IBM Explorer - Big Data - Armazenamento e Aquisição</a></li>
+            </ul>
+        """
+    },
+    {
+        "name": "Big Data - Fundamentos de Hadoop",
+        "id": "hadoop-fundamentals",
+        "company": "IBM",
+        "represent": """
+            <p>
+                Este badge é emitido e reconhecido pela IBM e atesta que as seguintes habilidades foram obtidas pelo titular:
+            </p>
+            <ul>
+                <li>Um entendimento básico de Apache Hadoop</li>
+                <li>Conhecimento básico de arquitetura Hadoop, incluindo HDFS e MapReduce</li>
+                <li>Conhecimento sobre outros projetos e componentes relacionados a Hadoop</li>
+                <li>Entendimento de como administrar um cluster de Hadoop</li>
+            </ul>
+        """,
+        "earn": """
+            <p>
+            Este badge é obtido depois de completar com sucesso todas as atividades do curso e passar no teste da Big Data University do curso de <a href='/courses/BDUPT/BD001PT/2015/about'>Fundamentos de Hadoop</a>
+            </p>
+        """,
+        "next": """
+            <p>
+                Os portadores deste badge podem perseguir os seguintes outros badges, idealmente (mas não obrigatoriamente) na seguinte ordem:
+            </p>
+            <ul>
+                <li><a href="#fundamentals">IBM Explorer - Big Data - Fundamentos</a></li>
+                <li><a href="#spark-fundamentals">IBM Explorer - Big Data - Fundamentos de Spark</a></li>
+                <li><a href="#programming">IBM Explorer - Big Data - Programação</a></li>
+                <li><a href="#administration">IBM Explorer - Big Data - Administração</a></li>
+                <li><a href="#analytics">IBM Explorer - Big Data - Análise</a></li>
+                <li><a href="#storage-and-retrieval">IBM Explorer - Big Data - Armazenamento e Aquisição</a></li>
+            </ul>
+        """
+    },
+    {
+        "name": "Big Data - Programação",
+        "id": "programming",
+        "company": "IBM",
+        "represent": """
+            <p>
+                Este badge é emitido e reconhecido pela IBM e atesta que as seguintes habilidades foram obtidas pelo titular:
+            </p>
+            <ul>
+                <li>Uma compreensão do paradigma de programação MapReduce</li>
+                <li>Conhecimento básico para desenvolver um programa MapReduce usando Eclipse e usando um wizard</li>
+                <li>Um entendimento da linguagem de programação Pig</li>
+            </ul>
+        """,
+        "earn": """
+            <p>
+                Este badge é obtido depois de completar com sucesso todas as atividades do curso e passar no teste dos seguintes cursos da Big Data University:
+            </p>
+            <ul>
+                <li><a href='/courses/BDUPT/BD010PT/2015/about'>Intrução à Programação com MapReduce</a></li>
+                <li><a href='/courses/BDUPT/BD060PT/2015/about'>Introdução a Pig</a></li>
+            </ul>
+        """,
+        "next": """
+            <p>
+                Os portadores deste badge podem perseguir os seguintes outros badges, idealmente (mas não obrigatoriamente) na seguinte ordem:
+            </p>
+            <ul>
+                <li><a href="#fundamentals">IBM Explorer - Big Data - Fundamentos</a></li>
+                <li><a href="#hadoop-fundamentals">IBM Explorer - Big Data - Fundamentos de Hadoop</a></li>
+                <li><a href="#spark-fundamentals">IBM Explorer - Big Data - Fundamentos de Spark</a></li>
+                <li><a href="#administration">IBM Explorer - Big Data - Administração</a></li>
+                <li><a href="#analytics">IBM Explorer - Big Data - Análise</a></li>
+                <li><a href="#storage-and-retrieval">IBM Explorer - Big Data - Armazenamento e Aquisição</a></li>
+            </ul>
+        """
+    },
+    {
+        "name": "Big Data - Administração",
+        "id": "administration",
+        "company": "IBM",
+        "represent": """
+            <p>
+                Este badge é emitido e reconhecido pela IBM e atesta que as seguintes habilidades foram obtidas pelo titular:
+            </p>
+            <ul>
+                <li>Uma compreensão das técnicas usadas para mover dados para Hadoop, incluindo Sqoop e Flume</li>
+                <li>Conhecimentos básicos sobre fluxos de trabalho Oozie e o coordenador Oozie para controlar jobs do Hadoop</li>
+                <li>Uma compreensão de como as ferramentas Zookeeper ajudam a coordenar e gerenciar aplicativos distribuídos</li>
+            </ul>
+        """,
+        "earn": """
+            <p>
+                Este badge é obtido depois de completar com sucesso todas as atividades do curso e passar no teste dos seguintes cursos da Big Data University:
+            </p>
+            <ul>
+                <li><a href='/courses/BDUPT/BD020PT/2015/about'>Movendo Dados para o Hadoop</a></li>
+                <li><a href='/courses/BDUPT/BD050PT/2015/about'>Controlando Hadoop Jobs utilizando Oozie</a></li>
+                <li><a href='/courses/BDUPT/BD065PT/2015/about'>Desenvolvend Aplicações Distribuídas Utilizando Zookeeper</a></li>
+            </ul>
+        """,
+        "next": """
+            <p>
+                Os portadores deste badge podem perseguir os seguintes outros badges, idealmente (mas não obrigatoriamente) na seguinte ordem:
+            </p>
+            <ul>
+                <li><a href="#fundamentals">IBM Explorer - Big Data - Fundamentos</a></li>
+                <li><a href="#hadoop-fundamentals">IBM Explorer - Big Data - Fundamentos de Hadoop</a></li>
+                <li><a href="#spark-fundamentals">IBM Explorer - Big Data - Fundamentos de Spark</a></li>
+                <li><a href="#programming">IBM Explorer - Big Data - Programação</a></li>
+                <li><a href="#analytics">IBM Explorer - Big Data - Análise</a></li>
+                <li><a href="#storage-and-retrieval">IBM Explorer - Big Data - Armazenamento e Aquisição</a></li>
+            </ul>
+        """
+    },
+    {
+        "name": "Big Data - Análise",
+        "id": "analytics",
+        "company": "IBM",
+        "represent": """
+            <p>
+                Este badge é emitido e reconhecido pela IBM e atesta que as seguintes habilidades foram obtidas pelo titular:
+            </p>
+            <ul>
+                <li>Uma compreensão básica de análise de texto e do Annotator Query Language (AQL)</li>
+                <li>Uma compreensão da linguagem de programação Jaql e como ela é usado com análise de texto</li>
+                <li>Conhecimento sobre BigSheets para analisar e visualizar Big Data sem ter que escrever código</li>
+            </ul>
+        """,
+        "earn": """
+            <p>
+                Este badge é obtido depois de completar com sucesso todas as atividades do curso e passar no teste dos seguintes cursos da Big Data University:
+            </p>
+            <ul>
+                <li><a href='/courses/BDUPT/BD085PT/2015/about'>Fundamentos de Análise de Texto</a></li>
+                <li><a href='/courses/BDUPT/BD058PT/2015/about'>Introdução a Jaql</a></li>
+                <li><a href='/courses/BDUPT/BD110PT/201/about'>Usando BigSheets para Análise de Planilhas</a></li>
+            </ul>
+        """,
+        "next": """
+            <p>
+                Os portadores deste badge podem perseguir os seguintes outros badges, idealmente (mas não obrigatoriamente) na seguinte ordem:
+            </p>
+            <ul>
+                <li><a href="#fundamentals">IBM Explorer - Big Data - Fundamentos</a></li>
+                <li><a href="#hadoop-fundamentals">IBM Explorer - Big Data - Fundamentos de Hadoop</a></li>
+                <li><a href="#spark-fundamentals">IBM Explorer - Big Data - Fundamentos de Spark</a></li>
+                <li><a href="#programming">IBM Explorer - Big Data - Programação</a></li>
+                <li><a href="#administration">IBM Explorer - Big Data - Administração</a></li>
+                <li><a href="#storage-and-retrieval">IBM Explorer - Big Data - Armazenamento e Aquisição</a></li>
+            </ul>
+        """
+    },
+    {
+        "name": "Big Data - Armazenamento e Aquisição",
+        "id": "storage-and-retrieval",
+        "company": "IBM",
+        "represent": """
+            <p>
+                Este badge é emitido e reconhecido pela IBM e atesta que as seguintes habilidades foram obtidas pelo titular:
+            </p>
+            <ul>
+                <li>Uma compreensão de conceitos HBase como o sistema e arquitetura HBase</li>
+                <li>Uma compreensão do que é Apache Hive, a arquitetura Hive, e casos de uso Hive</li>
+                <li>Conhecimento sobre o uso de SQL com BigSQL para acessar Hadoop</li>
+            </ul>
+        """,
+        "earn": """
+            <p>
+                Este badge é obtido depois de completar com sucesso todas as atividades do curso e passar no teste dos seguintes cursos da Big Data University:
+            </p>
+            <ul>
+                <li>Using HBase for Real-time Access to your Big Data</li>
+                <li><a href='/courses/BDUPT/BD030pt/2015/about'>Acessando Dados do Hadoop Utilizando Hive</a></li>
+                <li><a href='/courses/BDUPT/BD125PT/2015/about'>Accesso SQL para Hadoop</a></li>
+            </ul>
+        """,
+        "next": """
+            <p>
+                Os portadores deste badge podem perseguir os seguintes outros badges, idealmente (mas não obrigatoriamente) na seguinte ordem:
+            </p>
+            <ul>
+                <li><a href="#fundamentals">IBM Explorer - Big Data - Fundamentos</a></li>
+                <li><a href="#hadoop-fundamentals">IBM Explorer - Big Data - Fundamentos de Hadoop</a></li>
+                <li><a href="#spark-fundamentals">IBM Explorer - Big Data - Fundamentos de Spark</a></li>
+                <li><a href="#programming">IBM Explorer - Big Data - Programação</a></li>
+                <li><a href="#administration">IBM Explorer - Big Data - Administração</a></li>
+                <li><a href="#analytics">IBM Explorer - Big Data - Análise</a></li>
+            </ul>
+        """
+    },
+]
+
+%>
+
+<main class="container badges">
+    <aside>
+        <ul>
+            % for badge in badges:
+                <li><a href="#${ badge['id'] }">${ badge['name'] }</a></li>            
+            % endfor 
+        </ul>
+    </aside>
+
     <section>
-    <header></header>
+        % for badge in badges:
+            <section id="${ badge['id'] }">
+                <header>
+                    <img src="${static.url('themes/bdu/images/badge-ibm-explorer.png')}">
+                    <h2>${ badge['company'] }</h2>
+                    <h1>${ badge['name'] | break_name }</h1>
+                </header>
+                <section class="represents">
+                    <h3>O que este badge representa</h3>
+                    <article>
+                        ${ badge['represent'] }
+                    </article>
+                </section>
+                <section class="earned">
+                    <h3>Como esse badge é obtido</h3>
+                    <article>
+                        ${ badge['earn'] }
+                    </article>
+                </section>
+                <section class="next-steps">
+                    <h3>Quais são os próximos passos?</h3>
+                    <article>
+                        ${ badge['next'] }
+                    </article>
+                </section>
+            </section>
+        % endfor
     </section>
-</section>
+</main>
+
