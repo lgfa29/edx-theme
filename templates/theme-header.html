@@ -1,5 +1,8 @@
 ## mako
-<%! from django.core.urlresolvers import reverse %>
+<%! 
+from django.core.urlresolvers import reverse 
+from django.utils.translation import ugettext as _
+%>
 <%namespace name='static' file='/static_content.html'/>
 <%namespace name="courseware" file="/courseware/courseware.html"/>
 <%inherit file="/navigation.html"/>
@@ -22,10 +25,22 @@
 
 <%block name="navigation_global_links">
   <li class="nav-global-01">
-    <a href="https://bigdatauniversity.com/curriculum-map/">Mapa de Cursos</a>
+    <a href="${marketing_link('COURSES')}">${_('Courses')}</a>
   </li>
   <li class="nav-global-01">
-    <a href="https://bigdatauniversity.com/bdu-badge/">Badges</a>
+      <a href="${marketing_link('BADGES')}">Badges</a>
+  </li>
+  <li class="nav-global-01">
+    <a href="https://bigdatauniversity.com/resources/">Recursos</a>
+  </li>
+</%block>
+
+<%block name="navigation_global_links_authenticated">
+  <li class="nav-global-01">
+    <a href="${marketing_link('COURSES')}">${_('Courses')}</a>
+  </li>
+  <li class="nav-global-01">
+      <a href="${marketing_link('BADGES')}">Badges</a>
   </li>
   <li class="nav-global-01">
     <a href="https://bigdatauniversity.com/resources/">Recursos</a>
