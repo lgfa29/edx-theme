@@ -1,0 +1,165 @@
+<%! from django.utils.translation import ugettext as _ %>
+<%namespace name='static' file='../static_content.html'/>
+<%inherit file="../main.html" />
+
+<%block name="pagetitle">Recursos</%block>
+<%block name="bodyclass">static</%block>
+
+<%
+def generate_id(name):
+    return name.lower().replace(' ', '-')
+
+resources = [
+    {
+        "name": "Harness the Power of Big Data",
+        "description": """
+            <b>Análise de dados para Hadoop e streaming de dados</b>
+            <p>
+                As três características que definem a Big Data (volume, variedade e velocidade) são discutidas. Você terá uma introdução em Hadoop e como a IBM esta fortalecendo-o para fins empresariais e aprender quando usar IBM InfoSphere BigInsights (Big Data em repouso) e InfoSphere Streams (Big Data em movimento). Estratégias de implantação e dimensionamento e ainda casos de uso industriais estãoo incluídos neste guia prático.
+            </p>
+        """,
+        "authors": "Paul Zikopoulos, Dirk DeRoos, Krishnan Parasuraman, Thomas Deutsch, David Corrigan & James Giles"
+    },
+    {
+        "name": "Addressing Data Volume, Velocity, and Variety with IBM InfoSphere Streams V3.0",
+        "description": """
+            <b>Reunindo insights contínuos na Revolução da Informação</b>
+            <p>
+                Esta publicação discute e descreve o posicionamento, funções, capacidades e ténicas de programação avançada para IBM InfoSphere Streams, um novo paradigma e componente chave da plataforma IBM Big Data. Este livro é dirigido a profissionais que requerem um entendimento de como processar altos volumes de streaming de dados ou precisam de informações sobre como implementar sistemas que satisfazem estes requerimentos.
+            </p>
+        """,
+        "authors": "Mike Ebbers, Ahmed Abdel-Gayed, Veera Bhadran Budhi, Ferdiansyah Dolot, Vishwanath Kamat, Ricardo Picone & João Trevelin"
+    },
+    {
+        "name": "Database Fundamentals",
+        "description": """
+            <p>
+                Aprenda os primeiros passos da teoria de banco de dados relacional e outros modelos. Este livro discute a estrutura lógica e física de banco de dados e o introduz à linguagem SQL. Pratique com exercícios de abordagem prática.
+            </p>
+        """,
+        "authors": "Neeraj Sharma, Liviu Perniu, Raul F. Chong, Abhishek Iyer, Adi-Cristina Mitea, Chaitali Nandan, Mallarswami Nonvinkere & Mirela Danubianu"
+    },
+    {
+        "name": "Getting Started with DB2 Express-C",
+        "description": """
+            <p>
+                Esta é a terceira edição deste famoso livro que aborda DB2. Aprenda o que é DB2. Ele foi atualizado para DB2 9.7 e foi traduzido para diversas linguagens.
+            </p>
+        """,
+        "authors": "Raul F. Chong, Ian Hakes & Rav Ahuja"
+    },
+    {
+        "name": "Getting Started with InfoSphere Data Architect",
+        "description": """
+            <p>
+                InfoSphere Data Architect (IDA) é a principal ferramenta da IBM para sistema de banco de dados e mais. Aprenda como usá-lo em conjunto com DB2 Express-C, a edição sem custo do DB2. Como a IDA foi construída com base no Eclipse você pode integrá-la facilmente com outras ferramentas da IBM como Data Studio, também construído com tecnologia Eclipse. Este livro é para iniciantes em IDA e também em modelagem de dados.
+            </p>
+        """,
+        "authors": "Erin Wilson, Sagar Vibhute, Chetan Bhatia, Rahul Jain, Liviu Perniu, Shilpa Raveendramurthy & Robert Samuel"
+    },
+    {
+        "name": "Getting Started with DB2 application development",
+        "description": """
+            <p>
+                Este livro introduz você ao desenvolvimento de aplicações DB2 usando DB2 Express-C. Aprenda sobre stored procedures do DB2, funções e serviços Data Web usando SQL e XQuery. Aprenda como trabalhar com DB2 e JavaTM, C/C++, Ruby on Rails, Perl e mais!
+            </p>
+        """,
+        "authors": "Raul F. Chong, Xiqiang Ji, Priyanka Joshi, Vineet Mishra & Min Wei Yao"
+    },
+    {
+        "name": "Getting Started with IBM Data Studio for DB2",
+        "description": """
+            <p>
+                IBM Data Studio é uma ferramenta baseada em Eclipse que pode substituir a Central de Controle do DB2 e outras ferramentas para DB2. Em conjunto com DB2 Express-C, a edição sem custo do DB2, Data Studio é ideal para DBAs, desenvolvedores, estudantes, ISVs ou consultores porque é fácil e livre de usar. Você pode estender o Data Studio com ferramentas adicionais de mapeamento e capacidades de desenvolvimentos da IBM para ajudar a acelerar entrega, otimizar performance, proteger dados, manusear o crescimento de dados e mais.
+            </p>
+        """,
+        "authors": "Debra Eaton, Vitor Rodrigues, Manoj K. Sardana, Michael Schenker, Kathryn Zeidenstein & Raul F. Chong"
+    },
+    {
+        "name": "Getting Started with Open Source development",
+        "description": """
+            <p>
+               Desenvolvimento open source é uma metodologia dirigida pela comunidade para desenvolver produtos, desde a fase de desenvolvimento até a distribuição. Desenvolvedores de diversas partes do mundo são aficionados por suas colaborações e diversos projetos bem sucedidos como Firefox, Moodle e Drupal são usados mundialmente. Além disso, muitas companhias estão usando open source softwares como a base para construir seus modelos de negócios. Este livro o introduz ao mundo fascinante do open source. Usando exercícios e os casos de estudo disponibilizados, você vai ter boas experiências práticas para contribuir e começar projetos open source. 
+        """,
+        "authors": "Rachna Kapur, Mario Briggs, Pedro Carvalho, Ulisses Costa, Tapas Saha, Raul F. Chong & Peter Kohlmann"
+    },
+    {
+        "name": "DB2 pureScale",
+        "description": """
+            <b>Scaling ágil e sem risco</b>
+            <p>
+                DB2 é um servidor hibrido de dados que oferece armazenamento, escalamento e disponibilidade. DB2 pureScale é uma nova tecnologia otimizada principalmente para dimensionar clusters de processamento de maneira ativa-ativa. Este guia mostrará como DB2 com pureScale pode providenciar uma escalabilidade de aplicação transparente, a habilidade de entregar computação rápida para seus sistemas transacionais e extrema disponibilidade.
+            </p>
+        """,
+        "authors": "Paul Zikopoulos, Matt Huras, Aamer Sachedina & Paul Awad"
+    },
+    {
+        "name": "DB2 10 para z/OS",
+        "description": """
+            <b>Economia de custo...pronto para usar</b>
+            <p>
+                Providenciando conhecimento aprofundado sobre as ferramentas na nova versão do DB2 para z/OS, este é um guia extensivo que detalha as inovações do SQL e pureXML do DB2 10 que aumentam a produtividade, performance e simplificam porte de aplicações. DB2 para z/OS continua a ser indisputável líder nos quesitos de disponibilidade, escalabilidade, segurança e confiabilidade nos custos mais baixos por transação. Este recurso se foca em características e funções do DB2 10 para TI, incluindo melhoramento na eficiência de operações e reduzindo custos, assim como cobrindo inovações em resiliência para informações críticas de negócios, rápida aplicação e warehouse para crescimento de negócios, e análise aprimorada de negócios e funções matemáticas com QMF.
+            </p>
+        """,
+        "authors": "Roger Miller, David Beulke, Julian Stuhler & Surekha Pureka"
+    },
+    {
+        "name": "The IBM Data Governance Unified Process",
+        "description": """
+            <b>Direcionando valores de negócios com Software IBM e Melhores Práticas</b>
+            <p>
+                Qualquer um considerando um programa de governança de dados dentro de sua organização achará uma metodologia passo a passo usando ferramentas IBM e melhores práticas neste 'como fazer' estruturado. Enquanto muitos na indústria de TI seguram definições diferentes em suas mentes, este manual define a governança de dados como a forma de tratar dados como um ativo da empresa. O complexo processo de governança de dados envolve o exercício de decisão para otimizar, assegurar e alavancar dados. Providenciando uma rigorosa explanação de 14 passos e quase 100 sub-passos para unificar a governança de dados, este extensivo livro também mostra que problemas centrais a serem debatidos não tem a ver com a tecnologia mas com pessoas e processos.
+            </p>
+        """,
+        "authors": "Sunil Soares"
+    },
+    {
+        "name": "Business Intelligence Strategy",
+        "description": """
+            <b>Um guia prático para obter inteligência de negócios com excelência</b>
+            <p>
+                Direcionado para gestores de TI e executivos de negócio procurando excelência em negócios inteligentes, este guia prático explora a criação de estratégias que ajudam a priorizar requisitos de negócios, construção de estratégias culturais e organizacionais, incremento na eficiência TI e promove a adoção pelo usuário. Inteligência de negócios junto com análise de negócio e gestão de performance, eliminam sobrecarga de informação por organizar a quantidade massiva de informação disponível nas empresas modernas. Abordando os desafios de operações inteligentes de negócio, este recurso foca no objetivo de melhores decisões de negocio fazendo e identificando oportunidades ainda não abordadas. Cada capítulo inclui uma lista de abordagens recomendadas e uma estratégia pré-definida.
+            </p>
+        """,
+        "authors": "John Boyer, Bill Frank, Brian Green, Tracy Harris & Kay Van De Vanter"
+    },
+    {
+        "name": "IBM Business Analytics and Cloud Computing",
+        "description": """
+            <p>
+                Inteligência de negócios e softwares de análises permitem negócios analisar performance de dados para fazerem melhores decisões no uso de cloud computing--um modelo baseado na internet, acesso a rede sob demanda para um conjunto compartilhado de recursos de computador. Este livro é um guia prático para avaliação bem sucedida e design para implementação de Cognos Business Intelligence solução de nuvem, para tanto Cognos 8 BI ou Cognos Business Intelligence Version 10. Com informação pragmática e prática sobre as melhores práticas e diretrizes, assim como especificação de software e passos de configuração, este guia para soluções em TI inclui screen-shots, exemplos de código e instrução de entrada.
+            </p>
+        """,
+        "authors": "Anant Jhingran, Stephan Jou, William Lee, Thanh Pham & Biraj Saha"
+    },
+    {
+        "name": "Getting started with WAS CE",
+        "description": """
+            <p>
+                WebSphere Application Server Community Edition (WAS CE) é uma parte da família IBM WebSphere Application Sever. Esta edição para a comunidade é uma versão grátis construída em cima do Apache Geronimo. Aprenda como usar a Community Edition para desenvolver aplicações Java EE em conjunto com Eclipse e DB2 Express-C, a edição sem custo do DB2.
+            </p>
+        """,
+        "authors": "Jiang Lin Quan, Dai Xuan, Wang Lei, Juliano Marcos Martins, Chi Run Hua, Xia Ming, Tang Ying & Raul F. Chong"
+    }
+]
+%>
+
+<main class="container resources">
+    <aside>
+        <ul>
+            % for resource in resources:
+                <li><a href="#${ resource['name'] | generate_id }">${ resource['name'] }</a></li>
+            % endfor
+        </ul>
+    </aside>
+
+    <section>
+        % for resource in resources:
+            <section id="${ resource['name'] | generate_id }">
+                <h1>${ resource['name'] }</h1> 
+                ${ resource['description'] }
+                <p><b>Autores:</b> ${ resource['authors'] }</p>
+            </section>
+        % endfor
+    </section>
+</main>

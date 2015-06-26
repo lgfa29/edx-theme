@@ -2,15 +2,29 @@
 
 <%
     slides = [
-        'campus-party-brazil.jpg',
-        'csbc-brazil.jpg',
-        'apache-spark-v4-brazil.jpg', 
-        'digital-badge_v2_brazil.jpg',
+        {
+            'image': 'campus-party-brazil.jpg',
+            'url': 'http://recife.campus-party.org/parceiros/patrocinadores/',
+        },
+        {
+            'image': 'csbc-brazil.jpg',
+            'url': 'http://csbc2015.cin.ufpe.br/',
+        },
+        {
+            'image': 'apache-spark-v4-brazil.jpg', 
+            'url': '/courses/BDUPT/BD095PT/2015/about',
+        },
+        {
+            'image': 'digital-badge_v2_brazil.jpg',
+            'url': '/badges'
+        }
     ]
 %>
 <div class="carousel">
     % for slide in slides:
-        <img src="${static.url('themes/bdu/images/slides/{slide}'.format(slide=slide))}" />
+        <a href="${slide['url']}" target="_blank">
+            <img src="${static.url('themes/bdu/images/slides/{image_file}'.format(image_file=slide['image']))}" />
+        </a>
     % endfor
 </div>
 <div class="carousel-btn carousel-left-btn"><i class="fa fa-chevron-circle-left"></i></div>
