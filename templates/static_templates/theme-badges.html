@@ -13,41 +13,6 @@
 <%
 badges = [
     {
-        "name": "Big Data - Fundamentos de Spark",
-        "id": "spark-fundamentals",
-        "company": "IBM",
-        "represent": """
-            <p>
-                Este badge é emitido e reconhecido pela IBM e atesta que as seguintes habilidades foram obtidas pelo titular:
-            </p>
-            <ul>
-                <li>Um entendimento básico de Apache Spark</li>
-                <li>Conhencimento em operações de <i>Relisient Distributed Datasetsi</i></li>
-                <li>Habilidade básica em usar Scala, Java ou Python para criar e rodar aplicações Spark</li>
-                <li>Conhecimento básico em Spark SQL, MLlib, Spark Streaming e GraphX</li>
-                <li>Conhecimento de como configurar, monitorar e otimizar o Spark</li>
-            </ul>
-        """,
-        "earn": """
-            <p>
-            Este badge é obtido depois de completar com sucesso todas as atividades do curso e passar no teste da Big Data University do curso de <a href='/courses/BDUPT/BD095PT/2015/about'>Fundamentos de Spark</a>
-            </p>
-        """,
-        "next": """
-            <p>
-                Os portadores deste badge podem perseguir os seguintes outros badges, idealmente (mas não obrigatoriamente) na seguinte ordem:
-            </p>
-            <ul>
-                <li><a href="#fundamentals">IBM Explorer - Big Data - Fundamentos</a></li>
-                <li><a href="#hadoop-fundamentals">IBM Explorer - Big Data - Fundamentos de Hadoop</a></li>
-                <li><a href="#programming">IBM Explorer - Big Data - Programação</a></li>
-                <li><a href="#administration">IBM Explorer - Big Data - Administração</a></li>
-                <li><a href="#analytics">IBM Explorer - Big Data - Análise</a></li>
-                <li><a href="#storage-and-retrieval">IBM Explorer - Big Data - Armazenamento e Aquisição</a></li>
-            </ul>
-        """
-    },
-    {
         "name": "Big Data - Fundamentos",
         "id": "fundamentals",
         "company": "IBM",
@@ -116,6 +81,41 @@ badges = [
         """
     },
     {
+        "name": "Big Data - Fundamentos de Spark",
+        "id": "spark-fundamentals",
+        "company": "IBM",
+        "represent": """
+            <p>
+                Este badge é emitido e reconhecido pela IBM e atesta que as seguintes habilidades foram obtidas pelo titular:
+            </p>
+            <ul>
+                <li>Um entendimento básico de Apache Spark</li>
+                <li>Conhencimento em operações de <i>Relisient Distributed Datasetsi</i></li>
+                <li>Habilidade básica em usar Scala, Java ou Python para criar e rodar aplicações Spark</li>
+                <li>Conhecimento básico em Spark SQL, MLlib, Spark Streaming e GraphX</li>
+                <li>Conhecimento de como configurar, monitorar e otimizar o Spark</li>
+            </ul>
+        """,
+        "earn": """
+            <p>
+            Este badge é obtido depois de completar com sucesso todas as atividades do curso e passar no teste da Big Data University do curso de <a href='/courses/BDUPT/BD095PT/2015/about'>Fundamentos de Spark</a>
+            </p>
+        """,
+        "next": """
+            <p>
+                Os portadores deste badge podem perseguir os seguintes outros badges, idealmente (mas não obrigatoriamente) na seguinte ordem:
+            </p>
+            <ul>
+                <li><a href="#fundamentals">IBM Explorer - Big Data - Fundamentos</a></li>
+                <li><a href="#hadoop-fundamentals">IBM Explorer - Big Data - Fundamentos de Hadoop</a></li>
+                <li><a href="#programming">IBM Explorer - Big Data - Programação</a></li>
+                <li><a href="#administration">IBM Explorer - Big Data - Administração</a></li>
+                <li><a href="#analytics">IBM Explorer - Big Data - Análise</a></li>
+                <li><a href="#storage-and-retrieval">IBM Explorer - Big Data - Armazenamento e Aquisição</a></li>
+            </ul>
+        """
+    },
+   {
         "name": "Big Data - Programação",
         "id": "programming",
         "company": "IBM",
@@ -277,6 +277,9 @@ badges = [
                 <li><a href="#${ badge['id'] }">${ badge['name'] }</a></li>            
             % endfor 
         </ul>
+        <p>
+            Learn more about the <a href="https://ibm.biz/BdEWbV" target="_blank">IBM Badge Program</a><i class="fa fa-bookmark"></i>
+        </p>
     </aside>
 
     <section>
