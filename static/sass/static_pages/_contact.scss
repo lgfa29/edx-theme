@@ -1,0 +1,18 @@
+.static {
+    .contact {
+        ul {
+            list-style-type: none;
+            text-align: center;
+
+            li {
+                display: inline;
+
+                a {
+                    img {
+                        width: 50px;
+                    }
+                }
+            }
+        }
+    }
+}

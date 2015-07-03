@@ -1,4 +1,5 @@
 <%! from django.utils.translation import ugettext as _ %>
+<%namespace name='static' file='../static_content.html'/>
 <%inherit file="../main.html" />
 
 <%block name="pagetitle">Contato</%block>
@@ -7,11 +8,18 @@
 <section class="container contact">
 <h1>Contato <small>Contate a Big Data University</small></h1>
 <p>
-    If you would like to <em>host a course</em> on Big Data University, or contact us for any issue related to this web site, send us an e-mail at: <a href="mailto:admin@bigdatauniversity.com" target="_blank">admin@bigdatauniversity.com</a>
+    Se você gostaria de <em>ter um curso</em> na Big Data University, ou entrar em contato conosco sobre qualquer problema relacionado a este web-site, mande um e-mail para: <a href="mailto:admin@bigdatauniversity.com" target="_blank">admin@bigdatauniversity.com</a>
 </p>
 <p>
-    For any help or support topic, please be sure to check our <a title="Big Data University Support Center" href="http://support.bigdatauniversity.com/" target="_blank">support center</a> first.
+    Para qualquer ajuda ou suporte, visite a nossa <a title="Big Data University Support Center" href="http://support.bigdatauniversity.com/" target="_blank">página de suporte</a>.
 </p>
 <p>
-    You can also reach us through:
+    Você também pode interagir conosco pelas redes sociais:
+    <ul>
+        <li><a href="http://facebook.com/bigdatauniversity" target="_blank"><img src="${static.url('themes/bdu/images/logos/facebook.png')}"></a></li>
+        <li><a href="http://twitter.com/bigdatau" target="_blank"><img src="${static.url('themes/bdu/images/logos/twitter.png')}"></a></li>
+        <li><a href="https://plus.google.com/u/1/+Bigdatauniversity/about" target="_blank"><img src="${static.url('themes/bdu/images/logos/google_plus.png')}"></a></li>
+        <li><a href="http://www.youtube.com/user/TheBigDataUniversity" target="_blank"><img src="${static.url('themes/bdu/images/logos/youtube.png')}"></a></li>
+        <li><a href="http://www.linkedin.com/groups/BigData-University-4060416" target="_blank"><img src="${static.url('themes/bdu/images/logos/linkedin.png')}"></a></li>
+    </ul>
 </p>
