@@ -4,11 +4,6 @@ $(document).ready(function(){
 
     getCounter(function(newValue) {
         updateCounterAnimated(initialValue, newValue, counterDuration, updateCounter);
-
-        // register timer to keep counter up to date
-        setInterval(function() {
-            getCounter(updateCounter);
-        }, 5000);
     });
 
     function getCounter(callback) {
