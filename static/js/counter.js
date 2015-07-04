@@ -8,7 +8,7 @@ $(document).ready(function(){
         // register timer to keep counter up to date
         setInterval(function() {
             getCounter(updateCounter);
-        }, 3500);
+        }, 5000);
     });
 
     function getCounter(callback) {
