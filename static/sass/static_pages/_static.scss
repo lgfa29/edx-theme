@@ -18,13 +18,15 @@
                 }
             }
 
-            a { 
-                font-family: "Open Sans", Sans-Serif; 
-            }
-
-            p {
+            a, p, li {
                 font-family: "Open Sans", Sans-Serif;
                 font-weight: 300;
+            }
+
+            ol {
+                margin-top: 5px;
+
+                li { margin-bottom: 5px; }
             }
         }
     }
